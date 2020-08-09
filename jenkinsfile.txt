@@ -14,4 +14,8 @@ stage("Maven") {
         archive 'gameoflife-build/target/*.jar'
     }
 
+stage("Test1") {
+junit 'gameoflife-web/target/surefire-reports/*.xml'
+}
+
 }
