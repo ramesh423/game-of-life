@@ -1,0 +1,17 @@
+node('mvn') {
+    
+stage('Git') {
+        git 'https://github.com/ramesh423/game-of-life.git'
+    }
+    
+stage("Maven") {
+        
+        sh 'mvn package'
+    }
+   
+ stage("Test") {
+        
+        archive 'gameoflife-build/target/*.jar'
+    }
+
+}
